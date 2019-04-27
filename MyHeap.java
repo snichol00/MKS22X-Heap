@@ -17,6 +17,7 @@ public class MyHeap{
       //reset so child becomes new index
       idx = child;
       //then find the greater of its two children again
+      System.out.println(idx);
       if (data[2 * idx + 1] > data[2 * idx + 2]){
         child = data[2 * idx + 1];
       }
