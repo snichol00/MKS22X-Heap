@@ -2,11 +2,16 @@ public class MyHeap{
   private static void pushDown(int[]data,int size,int idx){
     int child;
     //makes child the greater child
-    if (data[2 * idx + 1] > data[2 * idx + 2]){
-      child = data[2 * idx + 1];
+    if ((2 * idx + 1) < size){
+      if (data[2 * idx + 1] > data[2 * idx + 2]){
+        child = 2 * idx + 1;
+      }
+      else{
+        child = 2 * idx + 2;
+      }
     }
     else{
-      child = data[2 * idx + 2];
+      child = 2 * idx + 1;
     }
     //while not out of bounds and not less than
     while(child < size && data[child] > data[idx]){
@@ -18,11 +23,16 @@ public class MyHeap{
       idx = child;
       //then find the greater of its two children again
       System.out.println(idx);
-      if (data[2 * idx + 1] > data[2 * idx + 2]){
-        child = data[2 * idx + 1];
+      if ((2 * idx + 1) < size){
+        if (data[2 * idx + 1] > data[2 * idx + 2]){
+          child = 2 * idx + 1;
+        }
+        else{
+          child = 2 * idx + 2;
+        }
       }
       else{
-        child = data[2 * idx + 2];
+        child = 2 * idx + 1;
       }
     }
   }
