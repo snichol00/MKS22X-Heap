@@ -6,7 +6,7 @@ public class MyHeap{
       child = data[2 * idx + 1];
     }
     else{
-      child2 = data[2 * idx + 2];
+      child = data[2 * idx + 2];
     }
     //while not out of bounds and not less than
     while(child < size && data[child] > data[idx]){
@@ -14,6 +14,15 @@ public class MyHeap{
       int temp = data[child];
       data[child] = data[idx];
       data[idx] = temp;
+      //reset so child becomes new index
+      idx = child;
+      //then find the greater of its two children again
+      if (data[2 * idx + 1] > data[2 * idx + 2]){
+        child = data[2 * idx + 1];
+      }
+      else{
+        child = data[2 * idx + 2];
+      }
     }
   /*
      - size  is the number of elements in the data array.
