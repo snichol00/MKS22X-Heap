@@ -69,7 +69,21 @@ public class MyHeap{
     //convert the array into a valid heap. [ should be O(n) ]
 
   public static void heapsort(int[] arr){
-
+    //make data into heap
+    heapify(arr);
+    int[] output = new int[arr.length];
+    int size = arr.length - 1;
+    int idx = 0;
+    while (idx > 0){
+      //remove 1st number and add it to new array
+      output[idx] = arr[0];
+      arr[0] = 0;
+      //by pushing down the new first num, the next greatest will be on top
+      pushDown(arr, size, 0);
+      size --;
+      idx++;
+    }
+    arr = output;
   }
   //sort the array by converting it into a heap then removing the largest value n-1 times. [ should be O(nlogn) ]
 
