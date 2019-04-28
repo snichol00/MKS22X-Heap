@@ -60,7 +60,11 @@ public class MyHeap{
      */
 
   public static void heapify(int[] arr){
-
+    //just push all elements down
+      //since pushDown is constant time
+    for (int x = arr.length - 1; x >= 0; x--){
+      pushDown(arr, arr.length, x);
+    }
   }
     //convert the array into a valid heap. [ should be O(n) ]
 
@@ -75,6 +79,8 @@ public class MyHeap{
     pushUp(arr, 4);
     HeapPrinter.print(arr);
     pushDown(arr, 11, 2);
+    HeapPrinter.print(arr);
+    heapify(arr);
     HeapPrinter.print(arr);
   }
 }
