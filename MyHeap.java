@@ -71,17 +71,14 @@ public class MyHeap{
   public static void heapsort(int[] arr){
     //make data into heap
     heapify(arr);
-    int[] output = new int[arr.length];
-    int size = arr.length - 1;
-    int idx = 0;
+    int idx = arr.length - 1;
     while (idx > 0){
       //remove 1st number and add it to new array
       output[idx] = arr[0];
       arr[0] = 0;
       //by pushing down the new first num, the next greatest will be on top
-      pushDown(arr, size, 0);
-      size --;
-      idx++;
+      pushDown(arr, idx, 0);
+      idx--;
     }
     arr = output;
   }
