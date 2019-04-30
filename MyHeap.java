@@ -87,7 +87,9 @@ public class MyHeap{
   }
   //sort the array by converting it into a heap then removing the largest value n-1 times. [ should be O(nlogn) ]
 
+/*
   public static void main(String[] args) {
+
     int[] arr = {11, 2, 6, 8, 13, 5, 4, 7, 9, 10, 20, 0};
     HeapPrinter.print(arr);
     pushUp(arr, 4);
@@ -137,5 +139,5 @@ public class MyHeap{
       }
       System.out.println();
     }
-  }
+  }*/
 }
